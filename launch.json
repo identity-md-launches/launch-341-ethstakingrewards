@@ -1,0 +1,22 @@
+{
+  "kind": "evm_project",
+  "token": {
+    "contract": "LaunchToken",
+    "name": "Trickle",
+    "symbol": "TRKL",
+    "decimals": 18
+  },
+  "contracts": [
+    {
+      "contract": "ETHStakingRewards",
+      "constructorArgs": ["$token"]
+    }
+  ],
+  "pool": {
+    "pairedCurrency": "0x0000000000000000000000000000000000000000",
+    "fee": 3000,
+    "tickSpacing": 60,
+    "initialPrice": "79228162514264337593543950336"
+  },
+  "notes": "Intended only for Sepolia (11155111). This test toy lets users stake TRKL and share donated test ETH streamed over seven days; it promises no yield or return. ETHStakingRewards stores the launch token address immutably, has no owner or admin, needs no initial TRKL balance, and requires no initialization calls. The factory supplies the native ETH/TRKL pool and MerkleDistributor; the pool has no hook. initialPrice is decimal sqrtPriceX96; services derive the effective opening price from the pinned policy when applicable. Policy, signed artifact linkage, admission and deployment belong to services and are not asserted as completed by this manifest."
+}
